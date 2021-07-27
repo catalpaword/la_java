@@ -6,41 +6,98 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        #biaodan {
+            border-radius: 3px;
+            box-shadow: 0 0 2px #000;
+            border-top: 10px solid rgb(64, 158, 254);
+            box-sizing: border-box;
+            top: -60px;
+            position: absolute;
+            background-color: #ffffff;
+            width: 300px;
+            padding: 20px;
+            left: 50%;
+            transform: translate(-50%);
+        }
+        
+        #divv {
+            position: relative;
+            height: 220px;
+            margin-top: 200px;
+            background-color: rgb(64, 158, 254);
+        }
+        
+        #btn_group {
+            text-align: center;
+        }
+        
+        .btn {
+            margin-top: 10px;
+            height: 30px;
+            text-align: center;
+            margin-left: 10px;
+            width: 100px;
+            color: #ffffff;
+            background-color: rgb(64, 158, 254);
+            border: none;
+            font-weight: 700;
+        }
+        
+        .title {
+            margin-top: -10px;
+            font-weight: 700;
+            text-align: center;
+            color: rgb(64, 158, 254);
+        }
+        
+        input {
+            border-radius: 5px;
+        }
+        
+        .logo {
+            text-align: center;
+        }
+        
+        .logo img {
+            width: 80px;
+            height: 50px;
+        }
+        
+        #name {
+            background: url(user.png);
+            background-size: 25px 35px;
+            background-position: 0px -6px;
+            background-repeat: no-repeat;
+            border: 1px solid gray;
+        }
+    </style>
 </head>
 
 <body>
-    <form action="" id="biaodan">
-        <table>
-            <tr>
-                <td>
-                    <label for="name">
-                        <img src="1.png" alt="">
-                    </label>
-                </td>
-                <td>
-                    <input type="text" id="name">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label for="pwd">
-                        <img src="2.png" alt="">
-                    </label>
-                </td>
-                <td>
-                    <input type="password" id="pwd">
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <input type="submit" value="登录">
-                </td>
-                <td>
-                    <input type="submit" value="获取账号体验">
-                </td>
-            </tr>
-        </table>
-    </form>
+    <div id="divv">
+        <div id="biaodan">
+            <div class="logo">
+                <img src="logo.png" alt="">
+            </div>
+            <div class="title">
+                <h3>mall-admin-web</h3>
+            </div>
+            <form action="">
+                <div>
+                    <input type="text" id="name" style="width:250px;text-indent:16px">
+                </div>
+                <div style="margin-top: 10px;">
+                    <input type="password" id="pwd" style="width:250px">
+                </div>
+                <div id="btn_group ">
+                    <input type="submit " class="btn " value="登录 ">
+                    <input type="submit " class="btn " id="btn1 " value="获取账号体验 ">
+                </div>
+            </form>
+        </div>
+    </div>
+
 </body>
 
 </html>
