@@ -9,10 +9,10 @@
     <style>
         #biaodan {
             border-radius: 3px;
-            box-shadow: 0 0 2px #000;
+            box-shadow: 0 0 2px gray;
             border-top: 10px solid rgb(64, 158, 254);
             box-sizing: border-box;
-            top: -60px;
+            top: -50px;
             position: absolute;
             background-color: #ffffff;
             width: 300px;
@@ -42,6 +42,7 @@
             background-color: rgb(64, 158, 254);
             border: none;
             font-weight: 700;
+            border-radius: 5px;
         }
         
         .title {
@@ -53,6 +54,9 @@
         
         input {
             border-radius: 5px;
+            box-shadow: 0 0 2px gray;
+            border: none;
+            outline: none;
         }
         
         .logo {
@@ -67,9 +71,42 @@
         #name {
             background: url(user.png);
             background-size: 25px 35px;
+            background-position: 1px -6px;
+            background-repeat: no-repeat;
+            width: 250px;
+            text-indent: 20px;
+        }
+        
+        #pwd {
+            background: url(pwd.png);
+            background-size: 25px 30px;
             background-position: 0px -6px;
             background-repeat: no-repeat;
-            border: 1px solid gray;
+            width: 250px;
+            text-indent: 20px;
+        }
+        
+        #con1 {
+            position: relative;
+            margin-top: 10px;
+            width: 250px;
+        }
+        
+        #con1 input {
+            width: 100%;
+        }
+        
+        #toggle {
+            background: url(eyes.png);
+            background-size: 20px 35px;
+            background-position: 0px -5px;
+            background-repeat: no-repeat;
+            height: 20px;
+            width: 20px;
+            position: absolute;
+            top: 2px;
+            right: -7px;
+            border: none;
         }
     </style>
 </head>
@@ -85,19 +122,33 @@
             </div>
             <form action="">
                 <div>
-                    <input type="text" id="name" style="width:250px;text-indent:16px">
+                    <input type="text" id="name">
                 </div>
-                <div style="margin-top: 10px;">
-                    <input type="password" id="pwd" style="width:250px">
+                <div id="con1">
+                    <input type="password" id="pwd">
+                    <button type="button" id="toggle"></button>
                 </div>
                 <div id="btn_group ">
-                    <input type="submit " class="btn " value="登录 ">
-                    <input type="submit " class="btn " id="btn1 " value="获取账号体验 ">
+                    <button type="submit" class="btn">登录</button>
+                    <button type="button" class="btn">获取账号体验</button>
                 </div>
             </form>
         </div>
     </div>
 
 </body>
+<script>
+    let btn = document.getElementById("toggle");
+    btn.onclick = function() {
+        let password = document.getElementById("pwd")
+        if (password.type === "password") {
+            password.type = "text";
+            btn.style.backgroundImage = 'url(eye.png)';
+        } else {
+            password.type = "password";
+            btn.style.backgroundImage = "url(eyes.png)";
+        }
+    }
+</script>
 
 </html>
