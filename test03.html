@@ -70,11 +70,11 @@
         
         #name {
             background: url(user.png);
-            background-size: 25px 35px;
-            background-position: 1px -6px;
+            background-size: 30px 40px;
+            background-position: -1px -10px;
             background-repeat: no-repeat;
             width: 250px;
-            text-indent: 20px;
+            text-indent: 22px;
         }
         
         #pwd {
@@ -83,7 +83,7 @@
             background-position: 0px -6px;
             background-repeat: no-repeat;
             width: 250px;
-            text-indent: 20px;
+            text-indent: 22px;
         }
         
         #con1 {
@@ -97,7 +97,7 @@
         }
         
         #toggle {
-            background: url(eyes.png);
+            background: url(eyesoff.png);
             background-size: 20px 35px;
             background-position: 0px -5px;
             background-repeat: no-repeat;
@@ -107,6 +107,10 @@
             top: 2px;
             right: -7px;
             border: none;
+        }
+        
+        #submit {
+            margin-right: 18px;
         }
     </style>
 </head>
@@ -129,7 +133,7 @@
                     <button type="button" id="toggle"></button>
                 </div>
                 <div id="btn_group ">
-                    <button type="submit" class="btn">登录</button>
+                    <button type="submit" class="btn" id="submit">登录</button>
                     <button type="button" class="btn">获取账号体验</button>
                 </div>
             </form>
@@ -143,11 +147,17 @@
         let password = document.getElementById("pwd")
         if (password.type === "password") {
             password.type = "text";
-            btn.style.backgroundImage = 'url(eye.png)';
+            btn.style.backgroundImage = 'url(eyesopen.png)';
         } else {
             password.type = "password";
-            btn.style.backgroundImage = "url(eyes.png)";
+            btn.style.backgroundImage = "url(eyesoff.png)";
         }
+    }
+</script>
+<script>
+    let submit = document.getElementById("submit");
+    submit.onclick = function(e) {
+        e.preventDefault();
     }
 </script>
 
