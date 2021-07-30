@@ -53,8 +53,8 @@
             </el-col>
 
             <el-col :span="isCollapse?23:20" style="height: 100%;">
-                <router-view></router-view>
-                <!-- <el-card class="box-card tou">
+
+                <el-card class="box-card tou">
                     <div class="toggle-button" @click="toggleCollapse">
                         <span v-if="isCollapse == false">
                         <i class="el-icon-s-fold"></i>
@@ -162,63 +162,16 @@
                     </el-table>
                     <el-pagination @size-change="handleSizeChange" @current-change="handleCurrentChange" :current-page="currentPage2" :page-sizes="[100, 200, 300, 400]" :page-size="100" layout="total, sizes, prev, pager, next, jumper" :total="400">
                     </el-pagination>
-                </el-card> -->
+                </el-card>
             </el-col>
 
         </el-row>
     </div>
-    <template id="myProList">
-        <div>这是{{v}}页面</div>
-    </template>
 </body>
 
 <script>
-    //0. 如果使用模块化机制编程，导入Vue和VueRouter，要调用 Vue.use(VueRouter)
-
-    // 1. 定义 (路由) 组件。
-    // 可以从其他文件 import 进来
-    const Bar = {
-        template: '<div>这是商品添加页面</div>'
-    }
-    const MyProList = {
-            template: '#myProList',
-            data: function() {
-                return {
-                    v: '商品列表'
-                }
-            },
-            created() {
-                console.log("初始化商品列表...");
-                axios
-                    .get('http://localhost:8080/hello')
-                    .then(response => {
-                        console.log(response);
-                    })
-                    .catch(function(error) { // 请求失败处理
-                        console.log(error);
-                    });
-            }
-        }
-        // 2. 定义路由
-        // 每个路由应该映射一个组件。 其中"component" 可以是
-        // 通过 Vue.extend() 创建的组件构造器，
-        // 或者，只是一个组件配置对象。
-        // 我们晚点再讨论嵌套路由。
-    const routes = [{
-            path: '/1-4-1',
-            component: MyProList
-        }, {
-            path: '/1-4-2',
-            component: Bar
-        }]
-        // 3. 创建 router 实例，然后传 `routes` 配置
-        // 你还可以传别的配置参数, 不过先这么简单着吧。
-    const router = new VueRouter({
-        routes // (缩写) 相当于 routes: routes
-    })
     new Vue({
         el: '#app',
-        router,
         data: function() {
             return {
                 isCollapse: false,
